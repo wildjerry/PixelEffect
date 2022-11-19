@@ -7,8 +7,8 @@ FPS = 24
 EXPONENT = 1/3
 def exportPixelGif(imLogo,imName):
 
-    framecount = FPS*4
-    stillcount = FPS*1
+    framecount = FPS*1.75
+    stillcount = FPS*0.25
 
     with imageio.get_writer(imName+".gif",mode="I") as writer:
         framenumber = 1
@@ -35,8 +35,10 @@ def exportPixelGif(imLogo,imName):
 
 firstLogo = cv2.cvtColor(cv2.imread("FIRST White Background.png"), cv2.COLOR_BGRA2RGBA)
 RRlogo = cv2.cvtColor(cv2.imread("RoaringWhite.png"),cv2.COLOR_BGRA2RGBA)
+RRhorn = cv2.cvtColor(cv2.imread("RoaringHorn.png"),cv2.COLOR_BGRA2RGBA)
 #exportPixelGif(googleLogo,"google")
 exportPixelGif(firstLogo,"first")
-
+exportPixelGif(RRlogo,"roaring")
+exportPixelGif(RRhorn,"horn")
 #press any key to close the windows
 cv2.destroyAllWindows()
